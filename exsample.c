@@ -16,6 +16,10 @@
 void app_main(void)
 
 {
+
+//Change Pins Related to SPI on ATM90E36.c file.
+//MOSI,MISO,SCLK,CS  
+
 //Initialise SPI
 start_spi();
 
