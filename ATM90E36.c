@@ -29,7 +29,8 @@
 #include "driver/spi_master.h"
 
 
-//Pins in the project
+//SPI Pins
+//Change these to the pins you use
 #define GPIO_MOSI 5
 #define GPIO_MISO 6
 #define GPIO_SCLK 4
