@@ -99,7 +99,7 @@ t.rxlength = 16;
 
 
 
-nsigned short CommEnergyIC(unsigned char RW, unsigned short address, unsigned short val) 
+unsigned short CommEnergyIC(unsigned char RW, unsigned short address, unsigned short val) 
     {
         //Sets the adress and read and write
         uint16_t addrss;
