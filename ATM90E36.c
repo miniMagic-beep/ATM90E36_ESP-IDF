@@ -397,7 +397,7 @@ void begin_ATM90E36(void)
   CommEnergyIC(WRITE, PLconstH, 0x0861);    // PL Constant MSB (default)
   CommEnergyIC(WRITE, PLconstL, 0xC468);    // PL Constant LSB (default)
   CommEnergyIC(WRITE, MMode0, 0x1087);      // Mode Config (60 Hz, 3P4W)
-  CommEnergyIC(WRITE, MMode1, 0x1500);      // 0x5555 (x2) // 0x0000 (1x)
+  CommEnergyIC(WRITE, MMode1, 0x0000);      // 0x5555 (x2) // 0x0000 (1x)
   CommEnergyIC(WRITE, PStartTh, 0x0000);    // Active Startup Power Threshold
   CommEnergyIC(WRITE, QStartTh, 0x0000);    // Reactive Startup Power Threshold
   CommEnergyIC(WRITE, SStartTh, 0x0000);    // Apparent Startup Power Threshold
