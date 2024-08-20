@@ -99,7 +99,7 @@ t.rxlength = 16;
 
 
 
-unsigned short CommEnergyIC(unsigned char RW, unsigned short address, unsigned short val) 
+nsigned short CommEnergyIC(unsigned char RW, unsigned short address, unsigned short val) 
     {
         //Sets the adress and read and write
         uint16_t addrss;
@@ -110,19 +110,24 @@ unsigned short CommEnergyIC(unsigned char RW, unsigned short address, unsigned s
             data = 0x0;
         }
         else{
-            addrss = 0x0000 | address;//Write
+            addrss = 0x0<<15 | address;//Write
             data = val;
+            t.length = 16;
         }
         spi_device_acquire_bus(spi, portMAX_DELAY);
-        *((uint16_t*)t.tx_data) = SPI_SWAP_DATA_TX(data, 16); // Writing the data to the TX buffer
+        
+  
+        
+        *((uint16_t*)t.tx_data) = SPI_SWAP_DATA_TX(data,16); // Writing the data to the TX buffer
         t.addr = addrss;// Writing the address to the address buffer
+
+        
         ret =  spi_device_polling_transmit(spi, &t);// Transmitting the data
         response = SPI_SWAP_DATA_RX(*((uint16_t*)t.rx_data), 16);// Reading the data from the RX buffer
         spi_device_release_bus(spi);
         vTaskDelay(10);
         return response;
     }
-
 
 
 
